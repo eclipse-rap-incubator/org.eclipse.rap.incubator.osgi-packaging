@@ -27,6 +27,7 @@
 
   <modules>
     <module>../../features/org.eclipse.rap.osgi-packaging.karaf.feature</module>
+    <module>../../features/org.eclipse.rap.osgi-packaging.karaf.feature/kar</module>
   </modules>
 
 </project>

@@ -18,34 +18,32 @@
     <groupId>org.eclipse.rap.incubator</groupId>
     <artifactId>org.eclipse.rap.incubator-parent</artifactId>
     <version>0.1.0-SNAPSHOT</version>
-    <relativePath>../../../org.eclipse.rap.incubator.releng/releng/org.eclipse.rap.incubator.releng/parent</relativePath>
+    <relativePath>../../../../org.eclipse.rap.incubator.releng/releng/org.eclipse.rap.incubator.releng/parent</relativePath>
   </parent>
 
-  <artifactId>org.eclipse.rap.osgi-packaging.karaf.feature</artifactId>
-  <version>2.0.0-SNAPSHOT</version>
-  <packaging>eclipse-feature</packaging>
+  <artifactId>org.eclipse.rap.osgi-packaging.karaf.kar</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>kar</packaging>
   
-  <repositories>
-    <repository>
-      <id>base-platform-repository</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/rt/rap/nightly/runtime</url>
-    </repository>
-    <repository>
-      <id>simultaneous-release-repository</id>
-      <layout>p2</layout>
-      <url>http://download.eclipse.org/releases/kepler</url>
-    </repository>
-  </repositories>
-
   <build>
     <plugins>
       <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-packaging-plugin</artifactId>
-        <version>${tycho-version}</version>
+        <groupId>com.eclipsesource.tycho.karaf.bridge</groupId>
+        <artifactId>kar-packager</artifactId>
+        <version>0.6.0</version>
+        <extensions>true</extensions>
         <configuration>
-          <deployableFeature>true</deployableFeature>
+          <bundlesFolder>${basedir}/../target/site/plugins</bundlesFolder>
+          <featureName>rap</featureName>
+          <featureVersion>2.0.0</featureVersion>
+          <featureDescription>Eclipse RAP bundles</featureDescription>
+          <karFile>rap-${project.version}</karFile>
+          <featureDependencies>
+            <featureDependency>
+              <name>http</name>
+              <versionRange>(2.0.0,4.0.0]</versionRange>
+            </featureDependency>
+          </featureDependencies>
         </configuration>
       </plugin>
     </plugins>
