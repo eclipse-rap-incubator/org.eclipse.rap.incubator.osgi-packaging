@@ -22,7 +22,7 @@
   </parent>
 
   <artifactId>org.eclipse.rap.osgi-packaging.karaf.kar</artifactId>
-  <version>2.0.0-SNAPSHOT</version>
+  <version>2.1.0-SNAPSHOT</version>
   <packaging>kar</packaging>
   
   <build>
@@ -35,7 +35,7 @@
         <configuration>
           <bundlesFolder>${basedir}/../target/site/plugins</bundlesFolder>
           <featureName>rap</featureName>
-          <featureVersion>2.0.0</featureVersion>
+          <featureVersion>2.1.0</featureVersion>
           <featureDescription>Eclipse RAP bundles</featureDescription>
           <karFile>rap-${project.version}</karFile>
           <featureDependencies>
